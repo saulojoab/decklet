@@ -4,10 +4,9 @@
     "dockerfile": "Dockerfile"
   },
   "remoteUser": "vscode",
-  "mounts": [
-    "source=/home/saulo/.ssh/agent/s.wbgh4N43jH.agent.4M7JCVde1O,target=/ssh-agent,type=bind"
-  ],
   "remoteEnv": {
     "SSH_AUTH_SOCK": "/ssh-agent"
-  }
+  },
+  "mounts": ["source=${localEnv:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"]
 }
+
